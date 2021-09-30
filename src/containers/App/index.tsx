@@ -10,6 +10,7 @@ function App(): ReactElement {
         <Content>ho</Content>
         <Footer>hee</Footer>
       </Layout>
+      <div>test</div>
     </>
   );
 }
