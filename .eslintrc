@@ -1,0 +1,54 @@
+{
+    "extends": [
+      "airbnb-typescript",
+      "airbnb/hooks",
+      "plugin:@typescript-eslint/eslint-recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:react/recommended",
+      "plugin:prettier/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "ecmaVersion": 2018,
+      "project": "tsconfig.json",
+      "sourceType": "module"
+    },
+    "plugins": ["prettier","eslint-plugin-import-helpers","import"],
+    "rules": {
+      "function-paren-newline": "off", // prettier와 충돌
+      "max-len": "off",// prettier와 충돌
+      "prettier/prettier":"error",
+      "import-helpers/order-imports": [
+        "error",
+        {
+          "alphabetize": {
+            "ignoreCase": true,
+            "order": "asc"
+          },
+          "groups": ["/^react/", "module", ["parent", "sibling", "index"]],
+          "newlinesBetween": "always"
+        }
+      ],
+      "react/jsx-sort-props": [
+        "error",
+        {
+          "ignoreCase": true
+        }
+      ],
+      "sort-imports": [
+        "error",
+        {
+          "ignoreCase": true,
+          "ignoreDeclarationSort": true
+        }
+      ]
+    },
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    }
+  }

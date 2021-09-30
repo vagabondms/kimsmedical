@@ -1,0 +1,9 @@
+build/*
+public/*
+src/react-app-env.d.ts
+src/serviceWorker.ts
+keystone
+.eslintrc.js
+craco.config.js
+commitlint.config.js
+Icon.tsx
