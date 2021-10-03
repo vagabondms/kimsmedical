@@ -1,5 +1,3 @@
 import { Layout } from 'antd';
-
-const { Header, Footer, Content } = Layout;
-
-export { Layout, Header, Footer, Content };
+const { Content, Header, Footer } = Layout;
+export { Layout, Content, Header, Footer };
