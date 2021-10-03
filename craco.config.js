@@ -15,15 +15,15 @@ module.exports = {
         tsConfigPath: 'tsconfig.paths.json',
       },
     },
-    {
-      plugin: CracoLessPlugin,
-      options: {
-        lessLoaderOptions: {
-          lessOptions: {
-            javascriptEnabled: true,
-          },
-        },
-      },
-    },
+    // {
+    //   plugin: CracoLessPlugin,
+    //   options: {
+    //     lessLoaderOptions: {
+    //       lessOptions: {
+    //         javascriptEnabled: true,
+    //       },
+    //     },
+    //   },
+    // },
   ],
 };
