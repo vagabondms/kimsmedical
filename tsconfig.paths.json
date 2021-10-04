@@ -16,10 +16,9 @@
       "@styles/*": ["src/styles/*"],
       "@config": ["src/config"],
       "@config/*": ["src/config/*"],
-      "@constants": ["src/constants"],
-      "@constants/*": ["src/constants/*"],
       "@images": ["src/images"],
       "@images/*": ["src/images/*"],
+      "@system/*": ["src/system/*"],
       "@/*": ["src/*"]
     }
   }

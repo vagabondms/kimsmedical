@@ -1,44 +1,72 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, ReactNode } from 'react';
+import { Link } from 'react-router-dom';
 
 import styled from '@emotion/styled';
-import { Menu as AMenu, MenuItemProps, MenuProps, SubMenuProps } from 'antd';
-
-const { Item: AItem, SubMenu: ASubMenu } = AMenu;
 
 //! Menu
-interface TMenuProps extends MenuProps {}
 
-const StyledMenu = styled(AMenu)<TMenuProps>`
-  justify-content: right;
-  width: calc(100% - 200px);
+const StyledMenu = styled.ul`
+  list-style: none;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
 `;
 
-const Menu = ({ children, ...rest }: MenuProps): ReactElement => {
-  return (
-    <StyledMenu {...rest} mode="horizontal">
-      {children}
-    </StyledMenu>
-  );
+interface MenuProps {
+  children: ReactNode;
+}
+
+const Menu = ({ children }: MenuProps): ReactElement => {
+  return <StyledMenu>{children}</StyledMenu>;
 };
 
 //! Item
-interface TItemProps extends MenuItemProps {}
 
-const StyledItem = styled(AItem)<MenuItemProps>``;
-
-const Item = ({ children, ...rest }: TItemProps): ReactElement => {
-  return <StyledItem {...rest}>{children}</StyledItem>;
-};
-
-//! SubMenu
-interface TSubMenuProps extends SubMenuProps {}
-
-const StyledSubMenu = styled(ASubMenu)<SubMenuProps>`
+const StyledSubMenu = styled.li`
   font-size: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 42px;
+  box-sizing: border-box;
 `;
 
-const SubMenu = ({ children, ...rest }: TSubMenuProps): ReactElement => {
-  return <StyledSubMenu {...rest}>{children}</StyledSubMenu>;
+const StyledLink = styled(Link)`
+  position: relative;
+
+  ::after {
+    content: '';
+    background-color: green;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    transition: all 0.2s ease-in-out;
+    opacity: 0;
+  }
+
+  :hover {
+    ::after {
+      width: 100%;
+      display: inline-block;
+      opacity: 1;
+      margin-left: -50%;
+    }
+  }
+`;
+
+interface TItemProps {
+  children: ReactNode;
+  to: string;
+}
+const Item = ({ children, to }: TItemProps) => {
+  return (
+    <StyledSubMenu>
+      <StyledLink to={to}>{children}</StyledLink>
+    </StyledSubMenu>
+  );
 };
 
-export { SubMenu, Menu, Item };
+export { Item, Menu };

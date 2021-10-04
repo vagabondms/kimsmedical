@@ -16,6 +16,9 @@ const Text = ({ children }: { children: ReactNode }): ReactElement => {
 
 const StyledTitle = styled.div`
   font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 const Title = ({ children }: { children: ReactNode }): ReactElement => {
