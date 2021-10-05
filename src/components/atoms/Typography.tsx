@@ -1,15 +1,10 @@
 import React, { ReactElement, ReactNode } from 'react';
 
 import styled from '@emotion/styled';
-import { Typography as ATypography, TypographyProps } from 'antd';
+import { Typography as ATypography } from 'antd';
 
-const { Text: AText, Title: ATitle, Paragraph: AParagraph } = ATypography;
+const { Text: AText, Paragraph: AParagraph } = ATypography;
 
-interface TTypographyProps extends TypographyProps {}
-
-const Typography = ({}: TTypographyProps): ReactElement => {
-  return <ATypography></ATypography>;
-};
 const Text = ({ children }: { children: ReactNode }): ReactElement => {
   return <AText>{children}</AText>;
 };
@@ -29,4 +24,4 @@ const Paragraph = ({}): ReactElement => {
   return <AParagraph></AParagraph>;
 };
 
-export { Typography, Text, Title, Paragraph };
+export { Text, Title, Paragraph };

@@ -1,4 +1,9 @@
-export default {
+const path: {
+  [key: string]: {
+    path: string;
+    title: string;
+  };
+} = {
   main: {
     path: '/',
     title: '메인',
@@ -28,3 +33,5 @@ export default {
     title: '오시는길',
   },
 };
+
+export default path;
