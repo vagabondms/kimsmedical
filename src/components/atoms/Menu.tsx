@@ -23,7 +23,7 @@ const Menu = ({ children }: MenuProps): ReactElement => {
 //! Item
 
 const StyledSubMenu = styled.li`
-  font-size: 20px;
+  font-size: 16px;
   text-align: center;
   display: flex;
   flex-direction: column;

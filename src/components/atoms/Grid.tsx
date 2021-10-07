@@ -1,21 +1,21 @@
-import React from 'react';
-
 import styled from '@emotion/styled';
 import { Col as ACol, Row as ARow, ColProps, RowProps } from 'antd';
 
-export { Col, Row };
-//* Col
-interface TColParams extends ColProps {}
+// * ROW
+interface TRowProps extends RowProps {}
 
-const StyledCol = styled(ACol)<ColProps>``;
+const StyledRow = styled(ARow)<TRowProps>``;
 
-const Col = ({ children, ...rest }: TColParams) => <StyledCol {...rest}>{children}</StyledCol>;
-
-//* Row
-interface TRowParams extends RowProps {}
-
-const StyledRow = styled(ARow)<RowProps>``;
-
-const Row = ({ children, ...rest }: TRowParams) => {
-  <StyledRow {...rest}>{children}</StyledRow>;
+const Row = ({ children, ...rest }: TRowProps) => {
+  return <StyledRow {...rest}>{children}</StyledRow>;
 };
+// * COL
+interface TColProps extends ColProps {}
+
+const StyledCol = styled(ACol)<TColProps>``;
+
+const Col = ({ children, ...rest }: TColProps) => {
+  return <StyledCol {...rest}>{children}</StyledCol>;
+};
+
+export { Row, Col };
