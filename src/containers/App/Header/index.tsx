@@ -9,7 +9,7 @@ const paths: string[] = Object.keys(path);
 const index = (): ReactElement => {
   return (
     <Header>
-      <Logo />
+      <Logo></Logo>
       <Menu>
         {paths.map((page: string) => {
           if (path[page].path === '/') {

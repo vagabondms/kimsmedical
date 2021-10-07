@@ -9,13 +9,11 @@ const { Content: AContent, Header: AHeader, Footer: AFooter } = Layout;
 //* Common
 // Header, Content, Footer에 기본적으로 1200px width를 맞춰주는 wrapper
 const LayoutInner = styled.div`
-  width: 1200px;
+  max-width: 1200px;
   margin: auto;
   height: 100%;
   display: flex;
-  flex-direction: row;
 `;
-
 // Layout 요소들의 공통 스타일
 const LayoutCommonStyle = css`
   background-color: #fff;
@@ -40,6 +38,7 @@ const StyledHeader = styled(AHeader)<LayoutProps>`
 
 const HeaderLayoutInner = styled(LayoutInner)`
   justify-content: space-between;
+  flex-direction: row;
 
   ul {
     float: right;
@@ -66,7 +65,9 @@ const StyledContent = styled(AContent)<LayoutProps>`
   padding-top: 100px;
 `;
 
-const ContentLayoutInner = styled(LayoutInner)``;
+const ContentLayoutInner = styled(LayoutInner)`
+  flex-direction: column;
+`;
 
 const Content = ({ children, ...rest }: ContentProps): ReactElement => {
   return (

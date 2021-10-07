@@ -1,12 +1,19 @@
 import React, { ReactElement, ReactNode } from 'react';
 
 import styled from '@emotion/styled';
+import { animationType, TWithAnimation } from '@styles/css';
 import { Typography as ATypography } from 'antd';
-
+import { TextProps } from 'antd/lib/typography/Text';
 const { Text: AText, Paragraph: AParagraph } = ATypography;
 
-const Text = ({ children }: { children: ReactNode }): ReactElement => {
-  return <AText>{children}</AText>;
+interface TTextProps extends TextProps, TWithAnimation {}
+
+const StyledText = styled(AText)<TTextProps>`
+  ${animationType}
+`;
+
+const Text = ({ children, ...rest }: TTextProps): ReactElement => {
+  return <StyledText {...rest}>{children}</StyledText>;
 };
 
 const StyledTitle = styled.div`
