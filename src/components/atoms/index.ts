@@ -1,5 +1,9 @@
-export { Content, Footer, Header, Layout, Nav } from './Layout';
+export { Content, Footer, Header, Layout } from './Layout';
 export { PageHeader } from './PageHeader';
-export { Text, Typography, Title } from './Typography';
+export { Text, Title } from './Typography';
 export { Space } from './Space';
-export { Menu, Item, SubMenu } from './Menu';
+export { Menu, Item } from './Menu';
+export { Row, Col } from './Grid';
+export { Divider } from './Divider';
+export { Image } from './Imag';
+export { List } from './List';
