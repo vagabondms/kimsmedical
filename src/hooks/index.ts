@@ -6,12 +6,18 @@ const useIsInViewPort = (ref: any) => {
     if (ref.current?.getBoundingClientRect().top < document.body.clientHeight) {
       setIsIn(true);
     }
-    window.addEventListener('scroll', () => {
+
+    const handler = () => {
       if (ref.current?.getBoundingClientRect().top < document.body.clientHeight) {
-        console.log(2);
         setIsIn(true);
       }
-    });
+    };
+
+    window.addEventListener('scroll', handler);
+
+    return () => {
+      window.removeEventListener('scroll', handler);
+    };
   }, [ref.current]);
   return [isIn];
 };
