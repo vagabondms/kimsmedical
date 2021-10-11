@@ -1,17 +1,31 @@
 import React, { ReactElement } from 'react';
 
-import { Content, Divider, Image, Row, Text } from '@components/atoms';
+import { Col, Content, Divider, Image, Row, Text, Title } from '@components/atoms';
 import Hospital from '@images/pictures/hospital.jpeg';
+import Inner from '@images/pictures/inner.jpeg';
 const Main = (): ReactElement => {
   return (
     <Content>
-      <Row>
+      <Row style={{ height: 420 }}>
         <Image src={Hospital} />
       </Row>
-      <Divider></Divider>
+      <Divider dividerType="none"></Divider>
       <Row justify="center">
-        <Text animation="fadeInUp">최선의 진료를 위해 노력하겠습니다.</Text>
+        <Title>최선의 진료를 위해 노력하겠습니다.</Title>
       </Row>
+      <Row justify="center" style={{ height: 500 }}>
+        <Text>10년 맛집!</Text>
+      </Row>
+      <Divider></Divider>
+      <Row animation="fadeInUp" justify="space-between">
+        <Col>
+          <Image src={Inner}></Image>
+        </Col>
+        <Col>
+          <Image src={Inner}></Image>
+        </Col>
+      </Row>
+      <Divider></Divider>
     </Content>
   );
 };

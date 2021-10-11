@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 
 export const fadeInUp = css`
-  animation: fadeIn 3s;
+  animation: fadeIn 3s forwards;
 
   @keyframes fadeIn {
     from {
