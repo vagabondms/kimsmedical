@@ -61,7 +61,7 @@ const StyledContent = styled(AContent)<LayoutProps>`
   ${LayoutCommonStyle}
 
   /* 페이지 만들어지면 빼기. */
-  height: 1000px;
+  
   padding-top: 100px;
 `;
 
